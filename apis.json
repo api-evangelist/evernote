@@ -1,0 +1,102 @@
+{
+    "name": "Evernote",
+    "description": "Organize your work and declutter your life. With Evernote on your desktop and mobile devices, your notes are always with you and always in sync.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/194-evernote-developers.jpg",
+    "tags": [
+        "api provider",
+        "have api",
+        "memory",
+        "notes"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/evernote\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Evernote",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/194-evernote-developers.jpg",
+            "humanURL": "http:\/\/evernote.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/evernote-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": " https:\/\/evernoteHost\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.evernote.com\/tech\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.evernote.com\/tech\/feed\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/evernote"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/evernote"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/twitter.com\/apsalarinc"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/dev.evernote.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "legalnotice@evernote.com"
+        },
+        {
+            "type": "Email",
+            "url": "compliance@evernote.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@evernote.com"
+        },
+        {
+            "type": "Google Alert",
+            "url": "https:\/\/twitter.com\/atlassian"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/evernote\/"
+        },
+        {
+            "type": "Compete",
+            "url": "evernote.com"
+        },
+        {
+            "type": "Transparency Report",
+            "url": "https:\/\/evernote.com\/legal\/transparency\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/evernote_dev"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/evernote"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/evernote.com\/"
+        }
+    ]
+}
