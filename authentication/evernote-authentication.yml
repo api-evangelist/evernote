@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/articles/authentication.php
+docs: https://dev.evernote.com/doc/articles/authentication.php
+summary:
+  types: [oauth1, developer-token]
+  oauth_version: '1.0a'
+  scopes: false
+  note: >-
+    The Evernote Cloud API (EDAM) is not OpenAPI/OAuth2-based; it is a Thrift
+    service. Authentication produces an authenticationToken that is passed as a
+    parameter to every UserStore/NoteStore call.
+schemes:
+- name: OAuth 1.0a
+  type: oauth1
+  legs: 3
+  temporary_credential_url: https://www.evernote.com/oauth
+  authorize_url: https://www.evernote.com/OAuth.action
+  token_url: https://www.evernote.com/oauth
+  sandbox_base: https://sandbox.evernote.com
+  description: >-
+    Three-legged OAuth 1.0a. Request a temporary token, redirect the user to
+    authorize, then exchange the verifier for a long-lived access token. Access
+    tokens do not expire unless revoked by the user. Recommended for public
+    applications, webhooks, and advanced permissions.
+  credentials:
+  - consumer key (API key)
+  - consumer secret
+- name: Developer Token
+  type: developer-token
+  issue_url: https://dev.evernote.com/doc/articles/dev_tokens.php
+  description: >-
+    A long-lived personal token that grants instant API access to the developer's
+    own account without the OAuth handshake. Intended for single-user scripts and
+    prototyping, not for accessing other users' accounts.
+permissions:
+  note: >-
+    Evernote uses per-application permission levels (e.g. read-only vs full
+    access) negotiated when an API key is activated, rather than OAuth scopes.
+  docs: https://dev.evernote.com/doc/articles/permissions.php
