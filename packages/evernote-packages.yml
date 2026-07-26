@@ -1,0 +1,62 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  https://github.com/evernote and https://dev.evernote.com/doc/ (official
+  Evernote Cloud API SDKs). The classic EDAM SDKs are deprecated and no longer
+  actively developed.
+packages:
+- language: python
+  registry: pypi
+  name: evernote
+  url: https://pypi.org/project/evernote/
+  install: pip install evernote
+  repository: https://github.com/evernote/evernote-sdk-python
+  official: true
+  note: Python 2 SDK. A Python 3 branch (evernote3) exists community-side.
+- language: java
+  registry: maven-central
+  name: com.evernote:evernote-api
+  url: https://github.com/evernote/evernote-sdk-java
+  install: "implementation 'com.evernote:evernote-api:1.25.1'"
+  repository: https://github.com/evernote/evernote-sdk-java
+  official: true
+- language: javascript
+  registry: npm
+  name: evernote
+  url: https://www.npmjs.com/package/evernote
+  install: npm install evernote
+  repository: https://github.com/evernote/evernote-sdk-js
+  official: true
+- language: ruby
+  registry: rubygems
+  name: evernote_oauth
+  url: https://github.com/evernote/evernote-sdk-ruby
+  install: gem install evernote_oauth
+  repository: https://github.com/evernote/evernote-sdk-ruby
+  official: true
+- language: php
+  registry: packagist
+  name: evernote/evernote-cloud-sdk-php
+  url: https://github.com/evernote/evernote-cloud-sdk-php
+  install: composer require evernote/evernote-cloud-sdk-php
+  repository: https://github.com/evernote/evernote-cloud-sdk-php
+  official: true
+- language: objective-c
+  registry: cocoapods
+  name: EvernoteSDK
+  url: https://github.com/evernote/evernote-cloud-sdk-ios
+  install: "pod 'EvernoteSDK'"
+  repository: https://github.com/evernote/evernote-cloud-sdk-ios
+  official: true
+- language: java
+  registry: github
+  name: evernote-sdk-android
+  url: https://github.com/evernote/evernote-sdk-android
+  repository: https://github.com/evernote/evernote-sdk-android
+  official: true
+- language: csharp
+  registry: github
+  name: evernote-sdk-csharp
+  url: https://github.com/evernote/evernote-sdk-csharp
+  repository: https://github.com/evernote/evernote-sdk-csharp
+  official: true

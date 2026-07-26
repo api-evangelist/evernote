@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/reference/Errors.html
+format: edam-thrift-exceptions
+envelope:
+  note: >-
+    Errors are surfaced as Thrift exceptions, not HTTP status codes. Each carries
+    an errorCode from the EDAMErrorCode enumeration plus a parameter naming the
+    offending field or resource.
+exceptions:
+- name: EDAMUserException
+  description: The caller supplied invalid or unauthorized input; correctable by the client.
+- name: EDAMSystemException
+  description: A server-side or rate-limit condition; often carries rateLimitDuration.
+- name: EDAMNotFoundException
+  description: A referenced object (note, notebook, tag, resource) does not exist.
+error_codes:
+- code: BAD_DATA_FORMAT
+  meaning: A value did not match the expected format (e.g. malformed ENML or GUID).
+- code: PERMISSION_DENIED
+  meaning: The token lacks permission for the requested operation or object.
+- code: INVALID_AUTH
+  meaning: The authenticationToken is malformed or invalid.
+- code: AUTH_EXPIRED
+  meaning: The authenticationToken has expired or been revoked.
+- code: DATA_REQUIRED
+  meaning: A required field was missing or empty.
+- code: LIMIT_REACHED
+  meaning: An account/resource limit was reached (e.g. max notes, upload quota).
+- code: QUOTA_REACHED
+  meaning: The monthly upload allowance has been exhausted.
+- code: RATE_LIMIT_REACHED
+  meaning: The API key/user rate limit was hit; retry after rateLimitDuration seconds.
+- code: DATA_CONFLICT
+  meaning: The change conflicts with existing data (e.g. duplicate name).
+- code: SHARD_UNAVAILABLE
+  meaning: The user's data shard is temporarily unavailable.
+- code: TAKEN_DOWN
+  meaning: The object was taken down (legal/compliance) and is inaccessible.
+- code: UNSUPPORTED_OPERATION
+  meaning: The requested operation is not supported for this object/account type.
+- code: ENML_VALIDATION
+  meaning: The note content failed ENML validation.

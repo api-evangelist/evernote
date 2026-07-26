@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/ + https://evernote.com/security
+standards:
+- id: oauth1a
+  conforms: true
+  evidence: Three-legged OAuth 1.0a authorization flow documented at dev.evernote.com/doc/articles/authentication.php
+- id: oauth2
+  conforms: false
+  evidence: Evernote Cloud API uses OAuth 1.0a, not OAuth 2.0.
+- id: oidc
+  conforms: false
+- id: thrift-edam
+  conforms: true
+  evidence: The Cloud API is an Apache Thrift service (EDAM UserStore/NoteStore).
+- id: rest
+  conforms: false
+  evidence: The Cloud API is Thrift/RPC over HTTP POST, not a REST API.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are EDAM Thrift exceptions (EDAMUserException/EDAMSystemException), not application/problem+json.
+- id: iso-27001
+  conforms: true
+  evidence: Evernote ISO 27001 certified as of November 2025 (evernote.com/security).
+- id: owasp-asvs
+  conforms: true
+  evidence: Google CASA Tier 2 assessment against OWASP ASVS.
+- id: gdpr
+  conforms: true
+  evidence: Privacy program aligns with GDPR (evernote.com/privacy/policy).

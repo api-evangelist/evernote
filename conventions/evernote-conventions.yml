@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/
+protocol:
+  style: thrift-rpc
+  transport: HTTP POST (binary or JSON Thrift encoding)
+  services: [UserStore, NoteStore]
+  note: >-
+    Every call takes an authenticationToken parameter. Clients first call
+    UserStore.getUserUrls / getNoteStoreUrl to discover the shard-specific
+    NoteStore endpoint for the authenticated user.
+authentication:
+  styles: [oauth1a, developer-token]
+  ref: authentication/evernote-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    Evernote does not document an idempotency-key mechanism. Mutations are
+    modeled as explicit Thrift operations (createNote, updateNote, etc.); safe
+    retry relies on the synchronization/USN model rather than idempotency keys.
+pagination:
+  style: offset-count
+  note: >-
+    NoteStore.findNotesMetadata takes an offset and maxNotes count and returns a
+    NotesMetadataList with startIndex, totalNotes, and the requested page of
+    note metadata.
+  params: [offset, maxNotes]
+  response_fields: [startIndex, totalNotes]
+synchronization:
+  model: update-sequence-number
+  note: >-
+    Incremental sync is driven by monotonically increasing Update Sequence
+    Numbers (USN). Clients call getSyncState / getFilteredSyncChunk and compare
+    updateCount to detect changes rather than polling full content.
+  docs: https://dev.evernote.com/doc/articles/synchronization.php
+rate_limiting:
+  signal: EDAMSystemException(errorCode=RATE_LIMIT_REACHED)
+  retry_field: rateLimitDuration (seconds until the next request is allowed)
+  scope: per (user, API key) pair; each API key has its own limit
+  docs: https://dev.evernote.com/doc/articles/rate_limits.php
+  best_practices: https://dev.evernote.com/doc/articles/rate_limit_best_practices.php
+error_envelope:
+  style: thrift-exceptions
+  types: [EDAMUserException, EDAMSystemException, EDAMNotFoundException]
+  ref: errors/evernote-error-codes.yml
+content_format:
+  name: ENML (Evernote Markup Language)
+  note: Note bodies are XHTML-based ENML documents.
+  docs: https://dev.evernote.com/doc/articles/enml.php
+lifecycle_ref: lifecycle/evernote-lifecycle.yml

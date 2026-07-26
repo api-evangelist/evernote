@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+spec_type: Webhooks
+source: https://dev.evernote.com/doc/articles/polling_notification.php
+description: >-
+  Evernote recommends webhook notifications over polling NoteStore.getSyncState.
+  When enabled for an application's API key, Evernote sends an HTTP GET to the
+  developer-registered webhook URL whenever a relevant account change occurs, so
+  the integration can then pull just the changed data via an incremental sync.
+delivery:
+  method: HTTP GET
+  registration: >-
+    Webhook URL is configured on the API key by Evernote developer support when
+    the key is activated (not self-serve).
+events:
+- reason: create
+  description: A new note was created in the user's account.
+- reason: update
+  description: An existing note was updated.
+- reason: delete
+  description: A note was deleted (expunged / moved to trash).
+- reason: notebook
+  description: A notebook was created, updated, or shared.
+callback_params:
+- userId
+- guid (note guid, when applicable)
+- notebookGuid
+- reason
+note: >-
+  Evernote publishes no AsyncAPI document; this captures the documented webhook
+  surface only. Payloads are query-string parameters on the GET, not JSON bodies.

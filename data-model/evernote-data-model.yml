@@ -1,0 +1,62 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/reference/ (EDAM Types)
+description: >-
+  Core entity graph of the Evernote Cloud API (EDAM Types), derived from the
+  published data-structures reference. Objects are identified by GUIDs and
+  tracked with Update Sequence Numbers (USN) for synchronization.
+entities:
+- name: User
+  key: id / username
+  description: The account owner; anchors the UserStore.
+- name: Notebook
+  key: guid
+  description: A named container for notes; may be personal, shared, or a business notebook.
+- name: Note
+  key: guid
+  description: A single note - ENML content plus metadata, attachments, and tags.
+- name: Tag
+  key: guid
+  description: A user-defined label, optionally nested via parentGuid.
+- name: Resource
+  key: guid
+  description: A binary attachment (image, audio, PDF, file) embedded in a note.
+- name: SavedSearch
+  key: guid
+  description: A stored search query.
+- name: LinkedNotebook
+  key: guid
+  description: A reference to a notebook shared from another user or business.
+relationships:
+- from: Note
+  to: Notebook
+  type: belongs_to
+  via: notebookGuid
+- from: Notebook
+  to: Note
+  type: has_many
+  via: notebookGuid
+- from: Note
+  to: Tag
+  type: has_many
+  via: tagGuids
+- from: Note
+  to: Resource
+  type: has_many
+  via: resources
+- from: Resource
+  to: Note
+  type: belongs_to
+  via: noteGuid
+- from: Tag
+  to: Tag
+  type: belongs_to
+  via: parentGuid
+- from: Note
+  to: User
+  type: belongs_to
+  via: user
+- from: LinkedNotebook
+  to: Notebook
+  type: references
+  via: shareKey/uri

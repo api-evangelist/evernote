@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/
+versioning:
+  scheme: edam-version
+  note: >-
+    The Cloud API version is negotiated via the EDAM protocol version constants
+    (EDAM_VERSION_MAJOR / EDAM_VERSION_MINOR) sent on each connection, not a URI
+    or header version.
+  docs: https://dev.evernote.com/doc/
+deprecation:
+  status: deprecated
+  scope: Classic Evernote Developer API (EDAM) and all classic SDKs.
+  statement: >-
+    "The classic Evernote Developer API (EDAM) and its SDKs are deprecated and no
+    longer actively developed." Evernote is building a Model Context Protocol
+    (MCP) server as the forward path for programmatic/AI access.
+  policy_url: https://dev.evernote.com/doc/
+  sunset_header: false
+status_page: https://status.evernote.com/
+successor:
+  name: Evernote MCP Server
+  status: in-development
+  url: https://evernote.com/mcp
+deprecated_operations: []
+note: >-
+  No RFC 8594 Sunset/Deprecation HTTP headers apply — the Cloud API is a Thrift
+  RPC service, not HTTP resource endpoints.

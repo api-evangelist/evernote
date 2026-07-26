@@ -1,7 +1,18 @@
 aid: evernote
 name: evernote
-description: evernote is a company surfaced as a portfolio company of slow-ventures and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Evernote is a cross-platform note-taking, organization, and task-management
+  application operated by Bending Spoons. It lets people capture notes, web
+  clips, images, audio, and documents, sync them across devices, and search
+  across their knowledge base. For developers, Evernote publishes the Evernote
+  Cloud API — a Thrift-based (EDAM) service exposing UserStore and NoteStore
+  operations for creating, reading, searching, sharing, and synchronizing notes,
+  notebooks, tags, and resources. Authentication is via three-legged OAuth 1.0a
+  or long-lived developer tokens, with a sandbox environment for development.
+  Official SDKs cover Python, Java, Ruby, JavaScript/Node, PHP, iOS, Android, and
+  C#. The classic EDAM API and SDKs are deprecated and no longer actively
+  developed; Evernote is now building a Model Context Protocol (MCP) server to
+  connect AI tools to notes.
 url: https://raw.githubusercontent.com/api-evangelist/evernote/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +20,58 @@ x-backed-by:
 - slow-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://evernote.com/img/evernote-logo.png
 tags:
 - Company
-apis: []
+- Note Taking
+- Productivity
+- Knowledge Management
+- Notes
+- Content
+- SaaS
+- Sync
+apis:
+- name: Evernote Cloud API
+  description: >-
+    The Evernote Cloud API (EDAM) is a Thrift-based service exposing UserStore
+    and NoteStore operations to create, read, update, search, share, and
+    synchronize notes, notebooks, tags, and resources in a user's Evernote
+    account. Authenticated with OAuth 1.0a or developer tokens. Deprecated and no
+    longer actively developed.
+  humanURL: https://dev.evernote.com/doc/
+  baseURL: https://www.evernote.com
+  tags:
+  - Notes
+  - Productivity
+  - Sync
+  properties:
+  - type: Authentication
+    url: authentication/evernote-authentication.yml
+  - type: Sandbox
+    url: sandbox/evernote-sandbox.yml
+  - type: ErrorCatalog
+    url: errors/evernote-error-codes.yml
+  - type: Webhooks
+    url: asyncapi/evernote-webhooks.yml
+  - type: DataModel
+    url: data-model/evernote-data-model.yml
+  - type: Conventions
+    url: conventions/evernote-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +80,72 @@ maintainers:
 common:
 - type: Website
   url: https://evernote.com
+- type: DeveloperPortal
+  url: https://dev.evernote.com
+- type: Documentation
+  url: https://dev.evernote.com/doc/
+- type: APIReference
+  url: https://dev.evernote.com/doc/reference/
+- type: GettingStarted
+  url: https://dev.evernote.com/doc/start/python.php
+- type: SignUp
+  url: https://dev.evernote.com/get-started/
+- type: Support
+  url: https://help.evernote.com/hc/en-us
+- type: Blog
+  url: https://evernote.com/blog
+- type: GitHubOrganization
+  url: https://github.com/evernote
+- type: Pricing
+  url: https://evernote.com/compare-plans
+- type: TermsOfService
+  url: https://evernote.com/legal/terms-of-service
+- type: PrivacyPolicy
+  url: https://evernote.com/privacy/policy
+- type: StatusPage
+  url: https://status.evernote.com/
+- type: RateLimits
+  url: https://dev.evernote.com/doc/articles/rate_limits.php
+- type: Packages
+  url: packages/evernote-packages.yml
+- type: SDKs
+  url: packages/evernote-packages.yml
+- type: MCPServer
+  url: mcp/evernote-mcp.yml
+- type: Authentication
+  url: authentication/evernote-authentication.yml
+- type: Lifecycle
+  url: lifecycle/evernote-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/evernote-lifecycle.yml
+- type: Conventions
+  url: conventions/evernote-conventions.yml
+- type: Conformance
+  url: conformance/evernote-conformance.yml
+- type: Compliance
+  url: https://evernote.com/security
+- type: TrustCenter
+  url: security/evernote-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/evernote-vulnerability-disclosure.yml
+- type: Security
+  url: security/evernote-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/evernote-domain-security.yml
+- type: WellKnown
+  url: well-known/evernote-well-known.yml
+- type: LLMsTxt
+  url: llms/evernote-llms.txt
+- type: Webhooks
+  url: asyncapi/evernote-webhooks.yml
+- type: Sandbox
+  url: sandbox/evernote-sandbox.yml
+- type: ErrorCatalog
+  url: errors/evernote-error-codes.yml
+- type: DataModel
+  url: data-model/evernote-data-model.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

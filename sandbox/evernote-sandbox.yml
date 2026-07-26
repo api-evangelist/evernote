@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.evernote.com/doc/articles/testing.php
+environments:
+- name: sandbox
+  base: https://sandbox.evernote.com
+  oauth: https://sandbox.evernote.com/oauth
+  description: >-
+    Independent test service with its own user accounts, isolated from
+    production. All development and API-key testing happens here first.
+  register: https://sandbox.evernote.com/Registration.action
+- name: production
+  base: https://www.evernote.com
+  oauth: https://www.evernote.com/oauth
+  description: >-
+    Live service. An API key must be separately activated for production after
+    it is validated in the sandbox.
+  activation: https://dev.evernote.com/support/ (production activation request)
+notes:
+- Sandbox and production are entirely separate; a sandbox account/token does not work against production and vice versa.
+- Consumer key + secret (the API key) are issued per environment.
+- No published magic test card / identifier values apply — Evernote is a notes service, not a payments API.

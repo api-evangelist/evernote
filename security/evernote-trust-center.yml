@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+url: https://evernote.com/security
+certifications:
+- ISO 27001
+- Google CASA Tier 2 (OWASP ASVS)
+compliance:
+- name: ISO 27001
+  status: certified
+  note: Certified as of November 2025 (information security management).
+- name: Google CASA Tier 2
+  status: assessed
+  note: >-
+    Annual Cloud Application Security Assessment against the OWASP Application
+    Security Verification Standard, including Dynamic Application Security
+    Testing (DAST).
+- name: GDPR
+  status: compliant
+  note: Privacy program aligns with GDPR (see privacy policy).
+encryption:
+  in_transit: HTTPS/TLS across all services (Fastly CDN + Google Cloud Platform).
+  at_rest: AES-256 server-side encryption with Google-managed keys.
+practices:
+- Mandatory 2FA / passkeys for employees
+- Least-privilege access model
+- Mobile Device Management on all employee devices
+- Yearly external penetration testing (reports available under NDA)
+- Real-time security alerts, threat monitoring, and OSINT
+- Annual security awareness training
+data_residency: All Evernote data resides in the United States.
+evidence:
+- source: https://evernote.com/security
+  keywords: [iso 27001, casa tier 2, encryption, penetration testing, bug bounty]

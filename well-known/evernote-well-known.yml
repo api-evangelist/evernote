@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on Evernote hosts
+note: >-
+  No genuine .well-known discovery documents are published. The evernote.com /
+  www.evernote.com sites are a Next.js SPA that returns the HTML app shell
+  (soft-404, content-type text/html) for unknown /.well-known/ paths rather than
+  a real RFC-9116/OIDC/RFC-8414 document, so nothing was saved verbatim.
+hosts:
+- host: https://www.evernote.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    document: false
+    note: SPA soft-404 (app shell HTML), not an RFC 9116 security.txt
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    document: false
+    note: SPA soft-404, not OIDC discovery JSON
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    document: false
+    note: SPA soft-404, not RFC 8414 metadata JSON
+- host: https://evernote.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://dev.evernote.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404

@@ -1,0 +1,50 @@
+# Evernote
+
+> Evernote is a cross-platform note-taking, organization, and task-management app (operated by Bending Spoons). Its Evernote Cloud API (EDAM) is a Thrift-based service exposing UserStore and NoteStore operations to create, read, search, share, and synchronize notes, notebooks, tags, and resources. Auth is OAuth 1.0a or developer tokens, with a sandbox environment. The classic EDAM API and SDKs are deprecated; an official Model Context Protocol (MCP) server is in development.
+
+## APIs
+
+- [Evernote Cloud API docs](https://dev.evernote.com/doc/): Thrift/EDAM UserStore + NoteStore reference and guides.
+- [API Reference](https://dev.evernote.com/doc/reference/): Cloud API, iOS SDK, Android SDK, and Javadoc references.
+
+## Authentication
+
+- [OAuth 1.0a](https://dev.evernote.com/doc/articles/authentication.php): three-legged OAuth against www.evernote.com/oauth.
+- [Developer Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php): long-lived single-account tokens.
+- [Get an API key](https://dev.evernote.com/get-started/): request a consumer key + secret.
+
+## Guides
+
+- [Getting Started (Python)](https://dev.evernote.com/doc/start/python.php)
+- [Rate Limits](https://dev.evernote.com/doc/articles/rate_limits.php)
+- [Rate Limit Best Practices](https://dev.evernote.com/doc/articles/rate_limit_best_practices.php)
+- [Synchronization (USN model)](https://dev.evernote.com/doc/articles/synchronization.php)
+- [ENML content format](https://dev.evernote.com/doc/articles/enml.php)
+- [Webhook notifications](https://dev.evernote.com/doc/articles/polling_notification.php)
+
+## SDKs
+
+- [Python](https://github.com/evernote/evernote-sdk-python)
+- [Java](https://github.com/evernote/evernote-sdk-java)
+- [JavaScript / Node](https://github.com/evernote/evernote-sdk-js)
+- [Ruby](https://github.com/evernote/evernote-sdk-ruby)
+- [PHP](https://github.com/evernote/evernote-cloud-sdk-php)
+- [iOS](https://github.com/evernote/evernote-cloud-sdk-ios)
+- [Android](https://github.com/evernote/evernote-sdk-android)
+- [C#](https://github.com/evernote/evernote-sdk-csharp)
+
+## AI / MCP
+
+- [Model Context Protocol](https://evernote.com/model-context-protocol): official Evernote MCP server (in development).
+- [MCP for Developers](https://evernote.com/model-context-protocol/evernote-mcp-for-developers)
+- [MCP Waitlist](https://evernote.com/mcp)
+
+## Company
+
+- [Website](https://evernote.com)
+- [Pricing](https://evernote.com/compare-plans)
+- [Security](https://evernote.com/security): ISO 27001, Google CASA Tier 2, HackerOne bug bounty.
+- [Status](https://status.evernote.com/)
+- [Terms of Service](https://evernote.com/legal/terms-of-service)
+- [Privacy Policy](https://evernote.com/privacy/policy)
+- [GitHub](https://github.com/evernote)

@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: evernote.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 19 05:41:27 2026 GMT
+  hsts: false
+- host: dev.evernote.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 25 15:42:02 2026 GMT
+  hsts: false
+- host: www.evernote.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug  2 01:27:04 2026 GMT
+  hsts: false
+domains:
+- domain: evernote.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
