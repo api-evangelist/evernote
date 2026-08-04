@@ -1,6 +1,7 @@
 generated: '2026-07-19'
 method: searched
-status: development
+status: announced
+status_raw: development
 source: https://evernote.com/model-context-protocol
 server:
   name: evernote-mcp
