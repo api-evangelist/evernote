@@ -13,18 +13,22 @@ docs:
 - https://evernote.com/model-context-protocol
 - https://evernote.com/model-context-protocol/evernote-mcp-for-developers
 - https://evernote.com/model-context-protocol/evernote-mcp-setup
-description: >-
-  Evernote is building an official Model Context Protocol (MCP) server that acts
-  as a gateway between a user's Evernote account and MCP-compatible AI tools
-  (Claude, Claude Code, and others). It is currently in development with a public
-  waitlist; no hosted endpoint or install command is published yet.
+description: Evernote is building an official Model Context Protocol (MCP) server that acts as a gateway
+  between a user's Evernote account and MCP-compatible AI tools (Claude, Claude Code, and others). It
+  is currently in development with a public waitlist; no hosted endpoint or install command is published
+  yet.
 capabilities:
 - name: read
   description: Access, search, and retrieve existing notes, notebooks, and tags.
 - name: create
   description: Generate new notes and save them to the user's account.
 tools: []
-note: >-
-  Tools are not yet enumerated by Evernote. A third-party community MCP server
-  also exists at https://github.com/verygoodplugins/mcp-evernote (not
-  first-party).
+note: Tools are not yet enumerated by Evernote. A third-party community MCP server also exists at https://github.com/verygoodplugins/mcp-evernote
+  (not first-party).
+deployment:
+  mode: remote
+  endpoint: https://evernote.com/mcp
+  verified: probed
+  probe: not-mcp
+  checked: '2026-08-12'
+  source: catalog MCP census
